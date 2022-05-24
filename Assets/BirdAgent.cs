@@ -17,6 +17,8 @@ public class BirdAgent : Agent
     private Vector3 birdStartPos;
     public Transform coinsParent;
 
+    private int coinsCollected = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,14 @@ public class BirdAgent : Agent
     {
         Debug.Log("Got a reward by coin!");
         AddReward(1.0f);
+
+        coinsCollected++;
+
+        if (coinsParent.childCount == coinsCollected)
+        {
+            Debug.Log("No more coins, ending episode");
+            EndEpisode();
+        }
     }
 
 
@@ -40,6 +50,7 @@ public class BirdAgent : Agent
     // Resets the agent everytime it finishes getting all coins or max steps
     public override void OnEpisodeBegin()
     {
+        coinsCollected = 0;
         Debug.Log("An episode began now");
 
         // TODO: Implement logic for resetting the game
@@ -47,9 +58,9 @@ public class BirdAgent : Agent
         transform.position = birdStartPos;                      // basically resets the bird to its original position
 
         // Optional 1: Make bird start at random position
-        float x = Random.RandomRange(-8f, 8f);
-        float y = Random.RandomRange(-4f, 2.5f);
-        transform.position = new Vector3(x, y, transform.position.z);
+        //float x = Random.RandomRange(-8f, 8f);
+        //float y = Random.RandomRange(-4f, 2.5f);
+        //transform.position = new Vector3(x, y, transform.position.z);
 
 
         foreach (Transform coin in coinsParent)                 // When an episode begin, this goes to coins parent, loop through all children and set active

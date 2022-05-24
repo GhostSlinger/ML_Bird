@@ -42,6 +42,11 @@ OnActionReceived(ActionBuffers actionBuffers)
 - Rays per Direction: 15
 
 
+13. Options to play with
+- crank up the ray per direction -> 40
+
+
+
 
 15. cd C:\RmitUniMaster\Projects-Unity\Practice\BirdGame_Starter
 
