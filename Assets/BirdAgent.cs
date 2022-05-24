@@ -20,11 +20,14 @@ public class BirdAgent : Agent
     // Start is called before the first frame update
     void Start()
     {
+        Application.runInBackground = true;
+
         // Get and store a references to the Rigidbody2D and SpriteRenderer components.
         rb2d = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
 
         birdStartPos = transform.position;                      // Gets the bird original starting position
+
     }
 
     public void HandleCollectCoin()
