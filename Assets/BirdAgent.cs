@@ -25,7 +25,6 @@ public class BirdAgent : Agent
         // Get and store a references to the Rigidbody2D and SpriteRenderer components.
         rb2d = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-
         birdStartPos = transform.position;                      // Gets the bird original starting position
 
     }
@@ -46,6 +45,12 @@ public class BirdAgent : Agent
         // TODO: Implement logic for resetting the game
 
         transform.position = birdStartPos;                      // basically resets the bird to its original position
+
+        // Optional 1: Make bird start at random position
+        float x = Random.RandomRange(-8f, 8f);
+        float y = Random.RandomRange(-4f, 2.5f);
+        transform.position = new Vector3(x, y, transform.position.z);
+
 
         foreach (Transform coin in coinsParent)                 // When an episode begin, this goes to coins parent, loop through all children and set active
         {
