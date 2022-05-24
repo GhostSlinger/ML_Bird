@@ -15,6 +15,7 @@ public class BirdAgent : Agent
     private SpriteRenderer sr;
 
     private Vector3 birdStartPos;
+    public Transform coinsParent;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class BirdAgent : Agent
         rb2d = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
 
-        birdStartPos = transform.position;
+        birdStartPos = transform.position;                      // Gets the bird original starting position
     }
 
     public void HandleCollectCoin()
@@ -41,7 +42,12 @@ public class BirdAgent : Agent
 
         // TODO: Implement logic for resetting the game
 
-        transform.position = birdStartPos;
+        transform.position = birdStartPos;                      // basically resets the bird to its original position
+
+        foreach (Transform coin in coinsParent)                 // When an episode begin, this goes to coins parent, loop through all children and set active
+        {
+            coin.gameObject.SetActive(true);
+        }
     }
 
     // Tells the agent what the current game state
