@@ -2,22 +2,22 @@
     "BirdBehaviour": {
         "checkpoints": [
             {
-                "steps": 12448,
-                "file_path": "results\\BirdTest_01\\BirdBehaviour\\BirdBehaviour-12448.onnx",
-                "reward": null,
-                "creation_time": 1653439125.5394397,
+                "steps": 42964,
+                "file_path": "results\\BirdTest_01\\BirdBehaviour\\BirdBehaviour-42964.onnx",
+                "reward": 7.410714285714286,
+                "creation_time": 1653439582.7583225,
                 "auxillary_file_paths": [
-                    "results\\BirdTest_01\\BirdBehaviour\\BirdBehaviour-12448.pt"
+                    "results\\BirdTest_01\\BirdBehaviour\\BirdBehaviour-42964.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 12448,
+            "steps": 42964,
             "file_path": "results\\BirdTest_01\\BirdBehaviour.onnx",
-            "reward": null,
-            "creation_time": 1653439125.5394397,
+            "reward": 7.410714285714286,
+            "creation_time": 1653439582.7583225,
             "auxillary_file_paths": [
-                "results\\BirdTest_01\\BirdBehaviour\\BirdBehaviour-12448.pt"
+                "results\\BirdTest_01\\BirdBehaviour\\BirdBehaviour-42964.pt"
             ]
         }
     },

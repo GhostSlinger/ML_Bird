@@ -53,6 +53,8 @@ OnActionReceived(ActionBuffers actionBuffers)
 -> Best way to fix, at first have the bomb at lower - reward (ex: -0.25), then 
 slowly raise it as your agent already got better
 
+-> It is also possible to check how many steps it has done in the script,
+then slowly alter the rewards
 
 
 

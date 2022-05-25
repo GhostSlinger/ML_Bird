@@ -50,7 +50,15 @@ public class BirdAgent : Agent
     public void HandleHitBomb()
     {
         Debug.Log("Ouch! You hit a bomb!");
-        AddReward(-0.25f);
+        if(StepCount > 30000)
+        {
+            AddReward(-1.0f);
+        }
+        else
+        {
+            AddReward(-0.25f);
+        }
+        
     }
 
 
