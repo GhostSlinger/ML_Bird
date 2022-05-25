@@ -46,6 +46,14 @@ OnActionReceived(ActionBuffers actionBuffers)
 - crank up the ray per direction -> 40
 
 
+14. Adding the bombs with negative rewards
+
+// How to fix it to not get scared of bombs?
+
+-> Best way to fix, at first have the bomb at lower - reward (ex: -0.25), then 
+slowly raise it as your agent already got better
+
+
 
 
 15. cd C:\RmitUniMaster\Projects-Unity\Practice\BirdGame_Starter

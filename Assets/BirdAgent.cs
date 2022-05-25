@@ -5,6 +5,7 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
+using System;
 
 public class BirdAgent : Agent
 {
@@ -16,6 +17,7 @@ public class BirdAgent : Agent
 
     private Vector3 birdStartPos;
     public Transform coinsParent;
+    public Transform bombsParent;
 
     private int coinsCollected = 0;
 
@@ -45,6 +47,12 @@ public class BirdAgent : Agent
         }
     }
 
+    public void HandleHitBomb()
+    {
+        Debug.Log("Ouch! You hit a bomb!");
+        AddReward(-0.25f);
+    }
+
 
     // mlagents-learn config/ppo/config.yaml --run-id=BirdTest_01 
     // Resets the agent everytime it finishes getting all coins or max steps
@@ -66,6 +74,11 @@ public class BirdAgent : Agent
         foreach (Transform coin in coinsParent)                 // When an episode begin, this goes to coins parent, loop through all children and set active
         {
             coin.gameObject.SetActive(true);
+        }
+
+        foreach (Transform bomb in bombsParent)                 
+        {
+            bomb.gameObject.SetActive(true);
         }
     }
 

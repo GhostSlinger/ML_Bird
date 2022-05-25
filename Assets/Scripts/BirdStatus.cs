@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class BirdStatus : MonoBehaviour
 {
@@ -21,5 +22,10 @@ public class BirdStatus : MonoBehaviour
         coinsCollected++;
         //Destroy(coin);
         coin.gameObject.SetActive(false);
+    }
+
+    internal void HitBomb(GameObject bomb)
+    {
+        bomb.gameObject.SetActive(false);
     }
 }
