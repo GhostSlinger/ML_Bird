@@ -39,7 +39,7 @@ OnActionReceived(ActionBuffers actionBuffers)
 - add in component Ray Perception Sensor 2D
 - Ray Layer Mask: Coin, set layer to the obstacles you want the agent to see
 - Max Ray Degrees: 180
-- Rays per Direction: 15
+- Rays per Direction: 15 -> 40
 
 
 13. Options to play with
@@ -57,10 +57,13 @@ slowly raise it as your agent already got better
 then slowly alter the rewards
 
 
+Running MLAgents
 
-15. cd C:\RmitUniMaster\Projects-Unity\Practice\BirdGame_Starter
+1. cd C:\RmitUniMaster\Projects-Unity\Practice\BirdGame_Starter
 
-16. tensorboard --logdir=results
+2. mlagents-learn config/ppo/config.yaml --run-id=BirdTest_01 --force
+
+3. tensorboard --logdir=results
 
 
 
